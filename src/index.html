@@ -57,7 +57,7 @@
         class="border max-w-screen-lg w-full max-h-[100vh] h-[100vh] shadow-lg rounded-md opacity-0 scale-90 animate-fadeIn flex flex-col bg-white">
 
         <!-- Top Bar (iOS-style) -->
-        <div class="bg-[#f1e9ec] h-[7vh] px-4 rounded-t-md flex items-center justify-between">
+        <div class="bg-[#f1e9ec] h-[7vh] px-4 rounded-t-md hidden md:flex items-center justify-between ">
             <!-- iOS-style circles -->
             <div class="flex space-x-2">
                 <div class="w-4 h-4 rounded-full bg-[#D3577C]"></div>
@@ -69,8 +69,26 @@
             <h1 class="text-lg text-gray-600 text-right">&lt;/KIDA codes&gt;</h1>
         </div>
 
+        <nav id="navBarMobile"
+                class="flex md:hidden w-full h-[7vh] bg-[#f1e9ec] border-b p-2 flex-row items-center justify-between px-4 space-x-4">
+                <a href="#About">
+                <div class="flex space-x-2">
+                    <div class="w-4 h-4 rounded-full bg-[#D3577C]"></div>
+                    <div class="w-4 h-4 rounded-full bg-[#F1C40D]"></div>
+                    <div class="w-4 h-4 rounded-full bg-[#5EC4B6]"></div>
+                </div>
+                </a>
+                <a href="#Projects" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Projects</a>
+                <button class="border rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b] px-4 py-1 ">
+                    Blogs
+                </button>
+
+               
+            </nav>
+
+
         <!-- Main Content -->
-        <div class="flex h-[93vh] max-h-[93vh] ">
+        <div class="flex h-[93vh] max-h-[93vh]">
             <!-- Sidebar Navigation (Desktop) -->
             <nav id="navBar"
                 class="w-1/5 hidden md:flex flex-col items-center justify-between text-sm text-left p-4 bg-gray-50 border-r">
@@ -106,21 +124,10 @@
             </nav>
 
             <!-- Mobile Navbar -->
-            <nav id="navBarMobile"
-                class="flex md:hidden w-full fixed bg-white border-b p-2 flex-row items-center justify-between px-4 space-x-4">
-                <a href="#About" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Discover</a>
-                
-
-                <button class="border rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b] px-4 py-1 ">
-                    Blogs
-                </button>
-
-                <a href="#Projects" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Projects</a>
-            </nav>
-
+            
 
             <!-- Content Section (Scrollable) -->
-            <div id="contentBar" class="flex-1 h-full overflow-auto p-6 scroll-smooth mt-2">
+            <div id="contentBar" class="flex-1 h-full overflow-auto p-6 scroll-smooth">
                 <!-- About Section (No Dropdown) -->
                 <section id="About" class="border-b py-6">
                     <button class="text-gray-400 mb-4">About</button>
