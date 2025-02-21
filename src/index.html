@@ -40,7 +40,7 @@
         }
 
         .custom-scroll::-webkit-scrollbar-thumb {
-            background: black;
+            background: gray;
             /* Black scroll thumb */
             border-radius: 10px;
             /* Rounded edges */
@@ -57,7 +57,7 @@
         class="border max-w-screen-lg w-full max-h-[100vh] h-[100vh] shadow-lg rounded-md opacity-0 scale-90 animate-fadeIn flex flex-col bg-white">
 
         <!-- Top Bar (iOS-style) -->
-        <div class="bg-[#f1e9ec] h-[7vh] p-4 rounded-t-md flex items-center justify-between">
+        <div class="bg-[#f1e9ec] h-[7vh] px-4 rounded-t-md flex items-center justify-between">
             <!-- iOS-style circles -->
             <div class="flex space-x-2">
                 <div class="w-4 h-4 rounded-full bg-[#D3577C]"></div>
@@ -108,33 +108,28 @@
             <!-- Mobile Navbar -->
             <nav id="navBarMobile"
                 class="flex md:hidden w-full fixed bg-white border-b p-2 flex-row items-center justify-between px-4 space-x-4">
-                <a href="#About" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">About</a>
-                <a href="#Projects" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Projects</a>
+                <a href="#About" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Discover</a>
+                
 
-                <button
-                    class="border rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b] px-4 py-1 ">
+                <button class="border rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b] px-4 py-1 ">
                     Blogs
                 </button>
 
+                <a href="#Projects" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Projects</a>
             </nav>
 
 
             <!-- Content Section (Scrollable) -->
             <div id="contentBar" class="flex-1 h-full overflow-auto p-6 scroll-smooth mt-2">
-
-                <section id="About" class="border-b py-6 ">
-                    <p class="text-gray-400 mb-4">About</p>
-
+                <!-- About Section (No Dropdown) -->
+                <section id="About" class="border-b py-6">
+                    <button class="text-gray-400 mb-4">About</button>
                     <div class="flex flex-col md:flex-row items-center md:space-x-6">
-                        <!-- Profile Picture -->
                         <div class="w-40 h-32 bg-gray-200 rounded-md hidden md:block"></div>
-
-                        <!-- Profile Description -->
                         <div class="text-center md:text-left">
                             <p class="text-lg text-gray-600">Hi, I'm</p>
                             <h2 class="text-3xl font-bold text-[#5EC4B6]">Kirby David</h2>
                             <p class="text-lg text-gray-500 mt-1">Aspiring Software Engineer</p>
-
                             <div class="flex flex-wrap justify-center md:justify-start gap-x-2 items-center mt-2">
                                 <p class="text-md text-gray-600">I am a first-year</p>
                                 <p class="text-lg font-semibold text-[#F1C40D]">BSIT Student</p>
@@ -145,48 +140,73 @@
                                 </a>
                             </div>
                         </div>
-
-                        <!-- Socials -->
-                        <div id="Socials" class=" mt-4 md:mt-0 md:pl-4 pt-4 md:pt-0 text-center">
-                            <p class="font-bold text-sm mb-2">Socials</p>
+                        <div id="Socials" class="mt-4 md:mt-0 md:pl-4 pt-4 md:pt-0 text-center">
+                            <p class=" text-sm mb-2">Socials</p>
                             <div class="flex flex-row justify-center space-x-4 text-gray-400 items-center">
-                                <a href="#" class="hover:text-[#1877F2]"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="hover:text-[#E4405F]"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="hover:text-[#1DA1F2]"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/kirby2k12" target="_blank" class="hover:text-[#1877F2]"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/kirbadoodie/" target="_blank" class="hover:text-[#E4405F]"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" target="_blank" class="hover:text-[#1DA1F2]"><i class="fa-brands fa-twitter"></i></a>
                             </div>
                         </div>
                     </div>
                 </section>
 
-
-
+                <!-- Dropdown Sections -->
                 <section id="Skills" class="border-b">
-                    <p class="text-gray-400">Skills</p>
+                    <input type="checkbox" id="skillsToggle" class="hidden peer">
+                    <label for="skillsToggle"
+                        class="flex justify-between items-center cursor-pointer py-4 text-gray-400 w-full">
+                        Skills
+                    </label>
+                    <div class="hidden peer-checked:block p-4 bg-gray-100 rounded-md">
+                        <p class="text-gray-600">Skills content goes here.</p>
+                    </div>
                 </section>
+
                 <section id="Education" class="border-b">
-                    <p class="text-gray-400">Education</p>
+                    <input type="checkbox" id="educationToggle" class="hidden peer">
+                    <label for="educationToggle"
+                        class="flex justify-between items-center cursor-pointer py-4 text-gray-400 w-full">
+                        Education
+                    </label>
+                    <div class="hidden peer-checked:block p-4 bg-gray-100 rounded-md">
+                        <p class="text-gray-600">Education content goes here.</p>
+                    </div>
                 </section>
 
                 <section id="Projects" class="border-b">
-                    <p class="text-gray-400">Projects</p>
-
-                    <!-- Scrollable Wrapper with padding-bottom for spacing -->
-                    <div class="overflow-y-auto custom-scroll pb-4 pr-2" style="max-height: calc(2.1 * 10rem);">
-                        <!-- Card Container -->
-                        <div class="flex flex-col space-y-6">
+                    <input type="checkbox" id="projectsToggle" class="hidden peer">
+                    <label for="projectsToggle"
+                        class="flex justify-between items-center cursor-pointer py-4 text-gray-400 w-full">
+                        Projects
+                    </label>
+                    <div class="hidden peer-checked:block p-4 bg-gray-100 rounded-md">
+                        <div class="overflow-y-auto custom-scroll pb-4 pr-2" style="max-height: calc(2.1 * 10rem);">
+                            <!-- Card Projects -->
+                            <div class="flex flex-col space-y-6">
+                                <div class="border rounded-lg p-4 shadow-sm bg-white w-full flex-shrink-0">
+                                    <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold text-lg text-gray-800">Project Title</h3>
+                                        <p class="text-sm text-gray-500">Date Created: YYYY-MM-DD</p>
+                                        <p class="text-gray-600 mt-2">Project Summary: This is a brief description of
+                                            the project.</p>
+                                        <p class="text-sm text-[#D3577C] text-right">Link: YYYY-MM-DD</p>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- Card -->
-                            <div class="border rounded-lg p-4 shadow-sm bg-white w-full flex-shrink-0">
-                                <!-- Placeholder Image -->
-                                <div class="w-full h-40 bg-gray-200 rounded-md"></div>
-
-                                <!-- Card Content -->
-                                <div class="mt-4">
-                                    <h3 class="font-semibold text-lg text-gray-800">Project Title</h3>
-                                    <p class="text-sm text-gray-500">Date Created: YYYY-MM-DD</p>
-                                    <p class="text-gray-600 mt-2">Project Summary: This is a brief description of the
-                                        project, highlighting its purpose, technologies used, and key achievements.</p>
-                                    <p class="text-sm text-[#D3577C] text-right">Link: YYYY-MM-DD</p>
+                            <div class="flex flex-col space-y-6">
+                                <div class="border rounded-lg p-4 shadow-sm bg-white w-full flex-shrink-0">
+                                    <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold text-lg text-gray-800">Project Title</h3>
+                                        <p class="text-sm text-gray-500">Date Created: YYYY-MM-DD</p>
+                                        <p class="text-gray-600 mt-2">Project Summary: This is a brief description of
+                                            the project.</p>
+                                        <p class="text-sm text-[#D3577C] text-right">Link: YYYY-MM-DD</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -194,36 +214,60 @@
                     </div>
                 </section>
 
+                <section id="Certificates" class="border-b">
+                    <input type="checkbox" id="certificatesToggle" class="hidden peer">
+                    <label for="certificatesToggle"
+                        class="flex justify-between items-center cursor-pointer py-4 text-gray-400 w-full">
+                        Certificates
+                    </label>
+                    <div class="hidden peer-checked:block p-4 bg-gray-100 rounded-md">
+                        <div class="overflow-x-auto custom-scroll pb-4">
+                            <!-- Cards Container (Forces Horizontal Layout) -->
+                            <div class="flex space-x-6 w-max">
+                                <!-- Card -->
+                                <div class="border rounded-lg p-4 shadow-sm bg-white w-64 flex-shrink-0">
+                                    <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold text-lg text-gray-800">Certificate Title</h3>
+                                        <p class="text-sm text-gray-500">Date Acquired: YYYY-MM-DD</p>
+                                        <p class="text-gray-600 mt-2">Brief description of the certificate.</p>
+                                    </div>
+                                </div>
 
+                                <div class="border rounded-lg p-4 shadow-sm bg-white w-64 flex-shrink-0">
+                                    <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold text-lg text-gray-800">Certificate Title</h3>
+                                        <p class="text-sm text-gray-500">Date Acquired: YYYY-MM-DD</p>
+                                        <p class="text-gray-600 mt-2">Brief description of the certificate.</p>
+                                    </div>
+                                </div>
 
-                <section id="Certificates" class="border-b py-4">
-                    <p class="text-gray-400">Certificates</p>
+                                <div class="border rounded-lg p-4 shadow-sm bg-white w-64 flex-shrink-0">
+                                    <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold text-lg text-gray-800">Certificate Title</h3>
+                                        <p class="text-sm text-gray-500">Date Acquired: YYYY-MM-DD</p>
+                                        <p class="text-gray-600 mt-2">Brief description of the certificate.</p>
+                                    </div>
+                                </div>
 
-                    <!-- Scrollable Wrapper with padding-bottom for spacing -->
-                    <div class="overflow-x-auto custom-scroll pb-4">
-                        <!-- Card Container -->
-                        <div class="flex space-x-6 w-max">
-
-                            <!-- Card -->
-                            <div class="border rounded-lg p-4 shadow-sm bg-white w-64 flex-shrink-0">
-                                <!-- Placeholder Image -->
-                                <div class="w-full h-40 bg-gray-200 rounded-md"></div>
-
-                                <!-- Card Content -->
-                                <div class="mt-4">
-                                    <h3 class="font-semibold text-lg text-gray-800">Placeholder Title</h3>
-                                    <p class="text-sm text-gray-500">Date Acquired: YYYY-MM-DD</p>
-                                    <p class="text-gray-600 mt-2">Placeholder summary about the certificate or
-                                        achievement.</p>
+                                <div class="border rounded-lg p-4 shadow-sm bg-white w-64 flex-shrink-0">
+                                    <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+                                    <div class="mt-4">
+                                        <h3 class="font-semibold text-lg text-gray-800">Certificate Title</h3>
+                                        <p class="text-sm text-gray-500">Date Acquired: YYYY-MM-DD</p>
+                                        <p class="text-gray-600 mt-2">Brief description of the certificate.</p>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </section>
-
 
             </div>
+
+
         </div>
     </div>
 
