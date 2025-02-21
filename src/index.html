@@ -7,7 +7,7 @@
     <link href="./output.css" rel="stylesheet">
     <title>Portfolio | Kirby David</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
-    
+
     <!-- Tailwind Custom Animation -->
     <style>
         @keyframes fadeIn {
@@ -15,74 +15,218 @@
                 opacity: 0;
                 transform: scale(0.9);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1);
             }
         }
+
         .animate-fadeIn {
+
             animation: fadeIn 0.4s ease-out forwards;
         }
+
+        /* Custom Scrollbar Styling */
+        .custom-scroll::-webkit-scrollbar {
+            height: 3px;
+            width: 3px;
+            /* Thin scrollbar */
+        }
+
+        .custom-scroll::-webkit-scrollbar-track {
+            background: transparent;
+            /* No background */
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: black;
+            /* Black scroll thumb */
+            border-radius: 10px;
+            /* Rounded edges */
+        }
     </style>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8966b11bb7.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="w-screen h-screen bg-white flex flex-col items-center p-0 lg:p-10">
-    
-    <div id="window" class="max-w-screen-lg w-full h-full shadow-lg rounded-md overflow-hidden opacity-0 scale-90 animate-fadeIn">
-        
+<body class="flex justify-center bg-gray-100 ">
+
+    <div id="window"
+        class="border max-w-screen-lg w-full max-h-[100vh] h-[100vh] shadow-lg rounded-md opacity-0 scale-90 animate-fadeIn flex flex-col bg-white">
+
         <!-- Top Bar (iOS-style) -->
-        <div class="bg-[#f1e9ec] p-4 rounded-t-md flex items-center justify-between">
-            
+        <div class="bg-[#f1e9ec] h-[7vh] p-4 rounded-t-md flex items-center justify-between">
             <!-- iOS-style circles -->
             <div class="flex space-x-2">
                 <div class="w-4 h-4 rounded-full bg-[#D3577C]"></div>
                 <div class="w-4 h-4 rounded-full bg-[#F1C40D]"></div>
                 <div class="w-4 h-4 rounded-full bg-[#5EC4B6]"></div>
             </div>
-            
+
             <!-- Centered Text -->
-            <h1 class="text-lg text-gray-600 flex-grow text-right">&lt;/KIDA codes&gt;</h1>
+            <h1 class="text-lg text-gray-600 text-right">&lt;/KIDA codes&gt;</h1>
         </div>
 
         <!-- Main Content -->
-        <div class="bg-white rounded-b-md text-gray-600 flex">
-            
-            <!-- Sidebar Navigation -->
-            <nav id="navBar" class="h-screen w-1/5 border-r flex flex-col space-y-6 items-center text-sm text-left p-4">
-    
-                <!-- About Section -->
-                <div class="flex flex-col space-y-1 w-full">
-                    <p class="px-2 py-1 text-gray-400 text-sm">Me</p>
-                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">About</a>
-                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Skills</a>
-                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Education</a>
+        <div class="flex h-[93vh] max-h-[93vh] ">
+            <!-- Sidebar Navigation (Desktop) -->
+            <nav id="navBar"
+                class="w-1/5 hidden md:flex flex-col items-center justify-between text-sm text-left p-4 bg-gray-50 border-r">
+                <div class="flex flex-col space-y-6 w-full">
+                    <!-- About Section -->
+                    <div class="flex flex-col space-y-1 w-full">
+                        <p class="px-2 py-1 text-gray-400 text-sm">Me</p>
+                        <a href="#About"
+                            class="hover:bg-gray-100 px-2 py-1 rounded-md transition ease-in-out duration-200">About</a>
+                        <a href="#Skills"
+                            class="hover:bg-gray-100 px-2 py-1 rounded-md transition ease-in-out duration-200">Skills</a>
+                        <a href="#Education"
+                            class="hover:bg-gray-100 px-2 py-1 rounded-md transition ease-in-out duration-200">Education</a>
+                    </div>
+
+                    <!-- Works Section -->
+                    <div class="flex flex-col space-y-1 w-full">
+                        <p class="px-2 py-1 text-gray-400 text-sm">My Works</p>
+                        <a href="#Projects"
+                            class="hover:bg-gray-100 px-2 py-1 rounded-md transition ease-in-out duration-200">Projects</a>
+                        <a href="#Certificates"
+                            class="hover:bg-gray-100 px-2 py-1 rounded-md transition ease-in-out duration-200">Certificates</a>
+                    </div>
+
+                    <!-- Blog Section -->
+                    <div class="w-full mt-4">
+                        <button
+                            class="border px-8 py-2 rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b] w-full transition ease-in-out duration-200">
+                            Blogs
+                        </button>
+                    </div>
                 </div>
-                
-                <!-- Works Section -->
-                <div class="flex flex-col space-y-1 w-full">
-                    <p class="px-2 py-1 text-gray-400 text-sm">My Works</p>
-                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Projects</a>
-                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Certificates</a>
-                </div>
-                
-                <!-- Blog Section -->
-                <div class="w-full">
-                    <button class="border px-8 py-2 rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b]">Blogs</button>
-                </div>
-                
             </nav>
-            
-            
-            <!-- Main Content Area -->
-            <div class="flex-grow p-4">
-                <!-- Additional content goes here -->
-                 test
+
+            <!-- Mobile Navbar -->
+            <nav id="navBarMobile"
+                class="flex md:hidden w-full fixed bg-white border-b p-2 flex-row items-center justify-between px-4 space-x-4">
+                <a href="#About" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">About</a>
+                <a href="#Projects" class="text-gray-600 hover:text-[#5EC4B6] transition duration-200">Projects</a>
+
+                <button
+                    class="border rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b] px-4 py-1 ">
+                    Blogs
+                </button>
+
+            </nav>
+
+
+            <!-- Content Section (Scrollable) -->
+            <div id="contentBar" class="flex-1 h-full overflow-auto p-6 scroll-smooth mt-2">
+
+                <section id="About" class="border-b py-6 ">
+                    <p class="text-gray-400 mb-4">About</p>
+
+                    <div class="flex flex-col md:flex-row items-center md:space-x-6">
+                        <!-- Profile Picture -->
+                        <div class="w-40 h-32 bg-gray-200 rounded-md hidden md:block"></div>
+
+                        <!-- Profile Description -->
+                        <div class="text-center md:text-left">
+                            <p class="text-lg text-gray-600">Hi, I'm</p>
+                            <h2 class="text-3xl font-bold text-[#5EC4B6]">Kirby David</h2>
+                            <p class="text-lg text-gray-500 mt-1">Aspiring Software Engineer</p>
+
+                            <div class="flex flex-wrap justify-center md:justify-start gap-x-2 items-center mt-2">
+                                <p class="text-md text-gray-600">I am a first-year</p>
+                                <p class="text-lg font-semibold text-[#F1C40D]">BSIT Student</p>
+                                <p class="text-md text-gray-600">at</p>
+                                <a href="https://www.pup.edu.ph" target="_blank" rel="noopener noreferrer"
+                                    class="text-lg font-semibold text-[#D3577C] hover:underline">
+                                    Polytechnic University of the Philippines
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Socials -->
+                        <div id="Socials" class=" mt-4 md:mt-0 md:pl-4 pt-4 md:pt-0 text-center">
+                            <p class="font-bold text-sm mb-2">Socials</p>
+                            <div class="flex flex-row justify-center space-x-4 text-gray-400 items-center">
+                                <a href="#" class="hover:text-[#1877F2]"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-[#E4405F]"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="hover:text-[#1DA1F2]"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <section id="Skills" class="border-b">
+                    <p class="text-gray-400">Skills</p>
+                </section>
+                <section id="Education" class="border-b">
+                    <p class="text-gray-400">Education</p>
+                </section>
+
+                <section id="Projects" class="border-b">
+                    <p class="text-gray-400">Projects</p>
+
+                    <!-- Scrollable Wrapper with padding-bottom for spacing -->
+                    <div class="overflow-y-auto custom-scroll pb-4 pr-2" style="max-height: calc(2.1 * 10rem);">
+                        <!-- Card Container -->
+                        <div class="flex flex-col space-y-6">
+
+                            <!-- Card -->
+                            <div class="border rounded-lg p-4 shadow-sm bg-white w-full flex-shrink-0">
+                                <!-- Placeholder Image -->
+                                <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+
+                                <!-- Card Content -->
+                                <div class="mt-4">
+                                    <h3 class="font-semibold text-lg text-gray-800">Project Title</h3>
+                                    <p class="text-sm text-gray-500">Date Created: YYYY-MM-DD</p>
+                                    <p class="text-gray-600 mt-2">Project Summary: This is a brief description of the
+                                        project, highlighting its purpose, technologies used, and key achievements.</p>
+                                    <p class="text-sm text-[#D3577C] text-right">Link: YYYY-MM-DD</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <section id="Certificates" class="border-b py-4">
+                    <p class="text-gray-400">Certificates</p>
+
+                    <!-- Scrollable Wrapper with padding-bottom for spacing -->
+                    <div class="overflow-x-auto custom-scroll pb-4">
+                        <!-- Card Container -->
+                        <div class="flex space-x-6 w-max">
+
+                            <!-- Card -->
+                            <div class="border rounded-lg p-4 shadow-sm bg-white w-64 flex-shrink-0">
+                                <!-- Placeholder Image -->
+                                <div class="w-full h-40 bg-gray-200 rounded-md"></div>
+
+                                <!-- Card Content -->
+                                <div class="mt-4">
+                                    <h3 class="font-semibold text-lg text-gray-800">Placeholder Title</h3>
+                                    <p class="text-sm text-gray-500">Date Acquired: YYYY-MM-DD</p>
+                                    <p class="text-gray-600 mt-2">Placeholder summary about the certificate or
+                                        achievement.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
             </div>
-            
         </div>
-        
     </div>
-    
+
 </body>
 
 </html>
