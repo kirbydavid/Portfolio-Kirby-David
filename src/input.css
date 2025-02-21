@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Fonts */
+@font-face {
+    font-family: 'Inter';
+    src: url('./Fonts/inter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cinderella';
+    src: url('Fonts/Cinderella.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('Fonts/Montserrat-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src: url('Fonts/SF-Pro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SF-Pro-Text-Heavy';
+    src: url('Fonts/SF-Pro-Text-Heavy.otf') format('opentype');
+}
+
+/* Utility Classes */
+.Inter { font-family: 'Inter', sans-serif; }
+.Cinderella { font-family: 'Cinderella', sans-serif; }
+.Montserrat-Bold { font-family: 'Montserrat-Bold', sans-serif; }
+.SF-Pro { font-family: 'SF-Pro', sans-serif; }
+.SF-Pro-Text-Heavy { font-family: 'SF-Pro-Text-Heavy', sans-serif; }
+
+/* Global Font */
+* { font-family: 'SF-Pro', sans-serif; }

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Portfolio | Kirby David</title>
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    
+    <!-- Tailwind Custom Animation -->
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="w-screen h-screen bg-white flex flex-col items-center p-0 lg:p-10">
+    
+    <div id="window" class="max-w-screen-lg w-full h-full shadow-lg rounded-md overflow-hidden opacity-0 scale-90 animate-fadeIn">
+        
+        <!-- Top Bar (iOS-style) -->
+        <div class="bg-[#f1e9ec] p-4 rounded-t-md flex items-center justify-between">
+            
+            <!-- iOS-style circles -->
+            <div class="flex space-x-2">
+                <div class="w-4 h-4 rounded-full bg-[#D3577C]"></div>
+                <div class="w-4 h-4 rounded-full bg-[#F1C40D]"></div>
+                <div class="w-4 h-4 rounded-full bg-[#5EC4B6]"></div>
+            </div>
+            
+            <!-- Centered Text -->
+            <h1 class="text-lg text-gray-600 flex-grow text-right">&lt;/KIDA codes&gt;</h1>
+        </div>
+
+        <!-- Main Content -->
+        <div class="bg-white rounded-b-md text-gray-600 flex">
+            
+            <!-- Sidebar Navigation -->
+            <nav id="navBar" class="h-screen w-1/5 border-r flex flex-col space-y-6 items-center text-sm text-left p-4">
+    
+                <!-- About Section -->
+                <div class="flex flex-col space-y-1 w-full">
+                    <p class="px-2 py-1 text-gray-400 text-sm">Me</p>
+                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">About</a>
+                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Skills</a>
+                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Education</a>
+                </div>
+                
+                <!-- Works Section -->
+                <div class="flex flex-col space-y-1 w-full">
+                    <p class="px-2 py-1 text-gray-400 text-sm">My Works</p>
+                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Projects</a>
+                    <a href="#" class="hover:bg-gray-100 px-2 py-1 rounded-md">Certificates</a>
+                </div>
+                
+                <!-- Blog Section -->
+                <div class="w-full">
+                    <button class="border px-8 py-2 rounded-md text-white font-bold bg-[#F1C40D] hover:bg-[#d8af0b]">Blogs</button>
+                </div>
+                
+            </nav>
+            
+            
+            <!-- Main Content Area -->
+            <div class="flex-grow p-4">
+                <!-- Additional content goes here -->
+                 test
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+
+</html>
